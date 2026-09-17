@@ -1,0 +1,12 @@
+# Python
+backend/venv/
+backend/__pycache__/
+backend/*.pyc
+backend/kisanflow.db
+
+# Node (frontend has its own .gitignore too)
+frontend/node_modules/
+frontend/dist/
+
+# OS
+.DS_Store

@@ -1,0 +1,3662 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #f5f7f4;
+  color: #1f2937;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.navbar {
+  height: 70px;
+  padding: 0 6%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 800;
+  color: #166534;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-buttons button {
+  border: none;
+  background: #f0fdf4;
+  padding: 10px 16px;
+  border-radius: 10px;
+}
+
+.container {
+  width: 88%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 45px 0;
+}
+
+.hero,
+.dashboard-header {
+  margin-bottom: 35px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #16a34a;
+}
+
+h1 {
+  font-size: 42px;
+  margin: 8px 0;
+}
+
+h2 {
+  margin-bottom: 5px;
+}
+
+.hero p,
+.dashboard-header p {
+  color: #6b7280;
+}
+
+.centre-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.centre-card {
+  background: white;
+  padding: 22px;
+  border-radius: 18px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+}
+
+.centre-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.centre-card p {
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.centre-info {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.centre-info div {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.capacity > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+}
+
+.progress {
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress div {
+  height: 100%;
+  background: #22c55e;
+}
+
+.primary-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #15803d;
+  color: white;
+  font-weight: 700;
+}
+
+.status {
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.status.success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status.warning {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status.danger {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.success-message {
+  padding: 15px;
+  background: #dcfce7;
+  color: #166534;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  background: white;
+  padding: 22px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.stat-icon {
+  font-size: 30px;
+}
+
+.stat-card p {
+  color: #6b7280;
+  margin: 0;
+}
+
+.stat-card h2 {
+  margin: 5px 0 0;
+}
+
+.table-container {
+  background: white;
+  border-radius: 16px;
+  overflow: auto;
+  border: 1px solid #e5e7eb;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 17px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+  background: #f9fafb;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+
+  .centre-grid,
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+}
+
+/* ============================================
+   KISANFLOW SMART CENTRE UI
+   ============================================ */
+
+.farmer-dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+  opacity: 0.65;
+}
+
+.dashboard-header h1 {
+  font-size: 42px;
+  line-height: 1.05;
+  margin: 0 0 15px;
+}
+
+.subtitle {
+  max-width: 600px;
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+.farmer-icon {
+  font-size: 80px;
+}
+
+.farmer-input-card {
+  padding: 28px;
+  border-radius: 20px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 35px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.section-title > span {
+  font-size: 30px;
+}
+
+.section-title h2 {
+  margin: 0;
+}
+
+.section-title p {
+  margin: 4px 0 0;
+  opacity: 0.6;
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.input-group input,
+.input-group select {
+  padding: 13px 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 15px;
+  background: white;
+}
+
+.find-button,
+.book-button,
+.confirm-button {
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 13px 18px;
+  transition: 0.2s;
+}
+
+.find-button {
+  width: 100%;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.find-button:hover,
+.book-button:hover,
+.confirm-button:hover {
+  transform: translateY(-2px);
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.section-heading h2 {
+  margin: 0;
+}
+
+.ai-badge,
+.centre-count {
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.centre-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.centre-card {
+  position: relative;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+}
+
+.centre-card.recommended {
+  border: 2px solid #22c55e;
+  box-shadow: 0 12px 35px rgba(34, 197, 94, 0.15);
+}
+
+.recommendation-badge {
+  position: absolute;
+  top: -12px;
+  right: 18px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.centre-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.centre-header h3 {
+  margin: 0 0 5px;
+  font-size: 18px;
+}
+
+.centre-header p {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.65;
+}
+
+.status {
+  height: fit-content;
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.status-low {
+  background: #dcfce7;
+}
+
+.status-moderate {
+  background: #fef3c7;
+}
+
+.status-high {
+  background: #fee2e2;
+}
+
+.centre-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.stat {
+  padding: 12px 8px;
+  text-align: center;
+  border-radius: 10px;
+  background: #f9fafb;
+}
+
+.stat span,
+.stat small {
+  display: block;
+  font-size: 11px;
+  opacity: 0.65;
+}
+
+.stat strong {
+  display: block;
+  font-size: 20px;
+  margin: 5px 0;
+}
+
+.capacity-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.capacity-bar {
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.capacity-fill {
+  height: 100%;
+  border-radius: 10px;
+}
+
+.recommendation-reason {
+  margin: 18px 0;
+  padding: 12px;
+  border-radius: 10px;
+  background: #f0fdf4;
+  font-size: 13px;
+}
+
+.recommendation-reason p {
+  margin: 5px 0 0;
+  opacity: 0.7;
+}
+
+.book-button {
+  width: 100%;
+  margin-top: 18px;
+}
+
+.dashboard-loading {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.loading-icon {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.error-box {
+  padding: 15px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+  box-sizing: border-box;
+
+  z-index: 1000;
+
+  overflow: hidden;
+}
+
+.booking-modal {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  max-height: calc(100vh - 40px);
+
+  padding: 30px;
+  background: white;
+  border-radius: 20px;
+  text-align: center;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.close-button {
+  position: sticky;
+  top: 0;
+
+  display: block;
+  margin-left: auto;
+
+  z-index: 20;
+
+  border: none;
+  background: white;
+  cursor: pointer;
+
+  font-size: 18px;
+}
+
+.modal-icon {
+  font-size: 45px;
+}
+
+.booking-info {
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 12px;
+  background: #f9fafb;
+  text-align: left;
+  line-height: 2;
+}
+
+.confirm-button {
+  width: 100%;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .centre-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard-header h1 {
+    font-size: 34px;
+  }
+
+  .farmer-icon {
+    display: none;
+  }
+
+  .input-grid,
+  .centre-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   BOOKING FORM
+   ============================================ */
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.booking-form h3 {
+  text-align: left;
+  margin: 8px 0 2px;
+  font-size: 15px;
+}
+
+.booking-form input,
+.booking-form select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 14px;
+  background: white;
+}
+
+.booking-error {
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 10px;
+  background: #fee2e2;
+  color: #991b1b;
+  font-size: 13px;
+  text-align: left;
+}
+
+.confirm-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ============================================
+   SUCCESS / APPOINTMENT TICKET
+   ============================================ */
+
+.booking-success {
+  text-align: center;
+}
+
+.success-icon {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.booking-success h2 {
+  margin-bottom: 8px;
+}
+
+.booking-success > p {
+  opacity: 0.65;
+}
+
+.ticket {
+  margin: 25px 0;
+  border: 2px dashed #d1d5db;
+  border-radius: 16px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.ticket-header {
+  padding: 14px;
+  text-align: center;
+  font-weight: 900;
+  letter-spacing: 2px;
+  background: #f0fdf4;
+}
+
+.ticket-id {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px dashed #d1d5db;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.ticket-id strong {
+  display: block;
+  margin-top: 5px;
+  font-size: 28px;
+  opacity: 1;
+}
+
+.ticket-details {
+  padding: 15px 20px;
+}
+
+.ticket-details p {
+  margin: 9px 0;
+  font-size: 14px;
+}
+
+/* ==========================================
+   CENTRE CARD - LIVE QUEUE
+   ========================================== */
+
+.centre-card {
+  position: relative;
+  padding: 22px;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+  transition: 0.2s ease;
+}
+
+.centre-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+}
+
+.recommended-card {
+  border: 2px solid #16a34a;
+}
+
+.recommended-badge {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 6px 10px;
+  border-radius: 20px;
+  background: #dcfce7;
+  color: #166534;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.centre-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.centre-card-header h3 {
+  margin: 0 0 5px;
+  font-size: 19px;
+}
+
+.centre-card-header p {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.65;
+}
+
+/* STATUS */
+
+.status-open,
+.status-busy,
+.status-full {
+  padding: 6px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.status-open {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-busy {
+  background: #ffedd5;
+  color: #9a3412;
+}
+
+.status-full {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* CONGESTION WARNING */
+
+.congestion-warning {
+  margin-top: 14px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #fff7e6;
+  border: 1px solid #f2d28b;
+  color: #9a3412;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* QUEUE */
+
+.queue-section {
+  margin-top: 22px;
+}
+
+.queue-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.queue-info strong {
+  font-size: 14px;
+}
+
+.queue-bar {
+  height: 9px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #e5e7eb;
+}
+
+.queue-progress {
+  height: 100%;
+  border-radius: 10px;
+  background: #16a34a;
+  transition: width 0.4s ease;
+}
+
+.queue-section small {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  opacity: 0.55;
+}
+
+/* STATS */
+
+.centre-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.centre-stat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #f9fafb;
+}
+
+.centre-stat > span {
+  font-size: 20px;
+}
+
+.centre-stat small {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 10px;
+  opacity: 0.55;
+}
+
+.centre-stat strong {
+  font-size: 13px;
+}
+
+/* BOOK BUTTON */
+
+.book-slot-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #166534;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.book-slot-button:hover {
+  background: #14532d;
+}
+
+.book-slot-button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* TIME SLOT GRID */
+
+.slot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.slot-button {
+  padding: 10px 8px;
+  border: 2px solid #166534;
+  border-radius: 8px;
+  background: white;
+  color: #166534;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.slot-button:hover:not(:disabled) {
+  background: #dcfce7;
+}
+
+.slot-button.selected {
+  background: #166534;
+  color: white;
+}
+
+.slot-button:disabled {
+  border-color: #d1d5db;
+  background: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+.slot-hint {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+/* ==========================================
+   APPOINTMENT TRACKER
+   ========================================== */
+
+.appointment-tracker {
+  margin-top: 20px;
+  padding: 22px;
+  border-radius: 18px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.tracker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.tracker-header h3 {
+  margin: 0;
+}
+
+.tracker-header p {
+  margin: 5px 0 0;
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+.appointment-status {
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: #fef3c7;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.appointment-status.status-cancelled {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.tracker-cancelled {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: #fee2e2;
+  color: #991b1b;
+  font-weight: 700;
+  font-size: 13px;
+  text-align: center;
+}
+
+.appointment-details {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.appointment-details div {
+  padding: 12px;
+  border-radius: 12px;
+  background: #f9fafb;
+}
+
+.appointment-details span {
+  display: block;
+  font-size: 11px;
+  opacity: 0.55;
+  margin-bottom: 5px;
+}
+
+.appointment-details strong {
+  font-size: 13px;
+}
+
+.tracker {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 30px;
+}
+
+.tracker-step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  opacity: 0.4;
+}
+
+.tracker-step::before {
+  content: "";
+  position: absolute;
+  top: 17px;
+  left: 50%;
+  width: 100%;
+  height: 3px;
+  background: #e5e7eb;
+  z-index: 0;
+}
+
+.tracker-step:last-child::before {
+  display: none;
+}
+
+.tracker-circle {
+  position: relative;
+  z-index: 1;
+  margin: auto;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e5e7eb;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.tracker-step span {
+  display: block;
+  margin-top: 8px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.tracker-step.active {
+  opacity: 1;
+}
+
+.tracker-step.active .tracker-circle {
+  background: #16a34a;
+  color: white;
+}
+
+.appointments-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.appointment-admin-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.appointment-admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.appointment-admin-header h3 {
+  margin: 0 0 6px;
+}
+
+.appointment-admin-header p {
+  margin: 0;
+  color: #666;
+}
+
+.appointment-status {
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.appointment-admin-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 18px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.appointment-admin-details div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.appointment-admin-details span {
+  font-size: 12px;
+  color: #777;
+}
+
+.appointment-admin-details strong {
+  font-size: 14px;
+}
+
+.status-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.status-buttons button {
+  border: none;
+  padding: 10px 16px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.status-buttons button:hover {
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   STEP 9 - ADMIN ANALYTICS
+========================================= */
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+
+/* =========================================
+   SMART ALERTS
+========================================= */
+
+.smart-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 14px;
+}
+
+.success-alert {
+  background: #eef8ef;
+  border: 1px solid #cde8d0;
+}
+
+.warning-alert {
+  background: #fff7e6;
+  border: 1px solid #f2d28b;
+}
+
+.alert-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.smart-alert h3 {
+  margin: 0 0 7px;
+}
+
+.smart-alert p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.alert-content h3 {
+  margin: 0 0 8px;
+}
+
+.alert-content p {
+  margin: 6px 0;
+  color: #666;
+}
+
+.alert-action {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   CENTRE UTILIZATION
+========================================= */
+
+.utilization-list {
+  display: grid;
+  gap: 20px;
+}
+
+.utilization-item {
+  padding: 18px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+}
+
+.utilization-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.utilization-header span {
+  font-weight: 700;
+}
+
+.utilization-bar {
+  height: 12px;
+  background: #edf0f2;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.utilization-fill {
+  height: 100%;
+  border-radius: 10px;
+  background: #2e7d32;
+  transition: width 0.4s ease;
+}
+
+.utilization-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #666;
+}
+
+
+/* =========================================
+   APPOINTMENT CONTROL
+========================================= */
+
+.appointments-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.appointment-admin-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.appointment-admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.appointment-admin-header h3 {
+  margin: 0 0 6px;
+}
+
+.appointment-admin-header p {
+  margin: 0;
+  color: #666;
+}
+
+.appointment-status {
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  background: #eef7ee;
+}
+
+.appointment-admin-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 18px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.appointment-admin-details div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.appointment-admin-details span {
+  font-size: 12px;
+  color: #777;
+}
+
+.appointment-admin-details strong {
+  font-size: 14px;
+}
+
+.status-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.status-buttons button {
+  border: none;
+  padding: 10px 16px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.status-buttons button:hover {
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 900px) {
+
+  .analytics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .appointment-admin-details {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .utilization-meta {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .analytics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .appointment-admin-details {
+    grid-template-columns: 1fr;
+  }
+
+  .appointment-admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+}
+
+/* =========================================
+   STEP 10 - FARMER NOTIFICATIONS
+========================================= */
+
+.farmer-notification {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  z-index: 9999;
+
+  width: 380px;
+  max-width: calc(100vw - 40px);
+
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+
+  padding: 18px 20px;
+
+  background: white;
+
+  border: 1px solid #dfe7df;
+  border-left: 5px solid #2e7d32;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.15);
+
+  animation:
+    notificationSlide 0.35s ease;
+}
+
+.notification-icon {
+  font-size: 30px;
+  line-height: 1;
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-content strong {
+  display: block;
+
+  font-size: 16px;
+
+  margin-bottom: 5px;
+
+  color: #222;
+}
+
+.notification-content p {
+  margin: 0;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  color: #666;
+}
+
+.notification-close {
+  border: none;
+
+  background: transparent;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  color: #777;
+
+  padding: 2px;
+}
+
+.notification-close:hover {
+  color: #222;
+}
+
+@keyframes notificationSlide {
+
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .farmer-notification {
+    top: 15px;
+    right: 15px;
+
+    width: auto;
+
+    max-width: calc(100vw - 30px);
+  }
+
+}
+
+/* =========================================
+   STEP 11 - VOICE + MULTILINGUAL UI
+========================================= */
+
+.voice-controls {
+  display: flex;
+  align-items: end;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.language-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.language-selector label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.language-selector select {
+  min-width: 140px;
+}
+
+.voice-button,
+.voice-help-button {
+  border: none;
+  padding: 11px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.voice-button {
+  background: #2e7d32;
+  color: white;
+}
+
+.voice-button.listening {
+  animation: voicePulse 1s infinite;
+}
+
+.voice-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.voice-help-button {
+  background: #eef5ee;
+  color: #2e7d32;
+}
+
+@keyframes voicePulse {
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+/* Notification */
+
+.farmer-notification {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  z-index: 9999;
+
+  width: 380px;
+  max-width: calc(100vw - 40px);
+
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+
+  padding: 18px 20px;
+
+  background: white;
+  border-left: 5px solid #2e7d32;
+  border-radius: 14px;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+
+  animation: notificationSlide 0.35s ease;
+}
+
+.notification-icon {
+  font-size: 30px;
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-content strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.notification-content p {
+  margin: 0;
+  color: #666;
+  font-size: 13px;
+}
+
+.notification-close {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+@keyframes notificationSlide {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .farmer-notification {
+    top: 15px;
+    right: 15px;
+    width: auto;
+  }
+
+  .voice-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+
+/* =========================================================
+   STEP 12 — OFFLINE / LOW-NETWORK MODE
+   Add these styles to FarmerDashboard.css
+   ========================================================= */
+
+.network-banner {
+  margin: 0 0 22px;
+  padding: 14px 16px;
+  border: 1px solid #d9e2d9;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: #f7faf7;
+}
+
+.network-banner.online {
+  border-color: #cfe5d2;
+}
+
+.network-banner.poor {
+  border-color: #ead9a7;
+  background: #fffaf0;
+}
+
+.network-banner.offline {
+  border-color: #e7caca;
+  background: #fff7f7;
+}
+
+.network-status-main {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+
+.network-status-main span:last-child {
+  opacity: 0.72;
+  font-size: 13px;
+}
+
+.network-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #58a866;
+  display: inline-block;
+}
+
+.network-banner.poor .network-dot {
+  background: #d4a72c;
+}
+
+.network-banner.offline .network-dot {
+  background: #c85c5c;
+}
+
+.network-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.network-actions small {
+  opacity: 0.65;
+}
+
+.sync-button {
+  border: 0;
+  border-radius: 10px;
+  padding: 9px 13px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.sync-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pending-bookings-section {
+  margin: 0 0 24px;
+  padding: 20px;
+  border: 1px solid #ead9a7;
+  border-radius: 16px;
+  background: #fffaf0;
+}
+
+.pending-bookings-section h2 {
+  margin: 4px 0 6px;
+}
+
+.pending-bookings-section p {
+  margin-top: 0;
+  opacity: 0.72;
+}
+
+.pending-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.pending-item {
+  display: grid;
+  grid-template-columns: minmax(100px, 0.8fr) minmax(180px, 2fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(180, 150, 70, 0.2);
+}
+
+.pending-item span {
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.pending-badge {
+  justify-self: end;
+  padding: 5px 8px;
+  border-radius: 999px;
+  font-size: 10px !important;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  opacity: 1 !important;
+}
+
+.notification-channel-card {
+  margin-top: 28px;
+  padding: 20px;
+  border: 1px solid #dce5dc;
+  border-radius: 16px;
+  background: #fafcf9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.notification-channel-card h3 {
+  margin: 4px 0 6px;
+}
+
+.notification-channel-card p:not(.eyebrow) {
+  margin: 0;
+  max-width: 680px;
+  opacity: 0.72;
+  line-height: 1.5;
+}
+
+.channel-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  min-width: 250px;
+}
+
+.channel-pills span {
+  padding: 8px 11px;
+  border-radius: 999px;
+  background: #eef4ee;
+  border: 1px solid #dce5dc;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  .network-banner,
+  .notification-channel-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .network-actions {
+    width: 100%;
+  }
+
+  .pending-item {
+    grid-template-columns: 1fr;
+  }
+
+  .pending-badge {
+    justify-self: start;
+  }
+
+  .channel-pills {
+    justify-content: flex-start;
+    min-width: 0;
+  }
+}
+
+/* =========================================================
+   KISANFLOW — STEP 13 + STEP 14 FINAL CSS
+   Add this AFTER your existing FarmerDashboard.css
+   ========================================================= */
+
+/* ---------- Notification Centre ---------- */
+
+.notification-center-card {
+  margin-top: 28px;
+  padding: 22px;
+  border: 1px solid #dce5dc;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.notification-center-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.notification-center-header h2 {
+  margin: 4px 0 6px;
+}
+
+.notification-center-header p:not(.eyebrow) {
+  margin: 0;
+  opacity: .7;
+}
+
+.reminder-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid #dce5dc;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  background: #f8faf8;
+}
+
+.reminder-toggle input {
+  width: 16px;
+  height: 16px;
+  accent-color: #2f7d4a;
+}
+
+.notification-empty {
+  padding: 22px;
+  border-radius: 12px;
+  background: #f7faf7;
+  text-align: center;
+  opacity: .7;
+}
+
+.notification-history {
+  display: grid;
+  gap: 10px;
+}
+
+.notification-history-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 13px;
+  padding: 13px 14px;
+  border-radius: 13px;
+  background: #f8faf8;
+  border: 1px solid #e4ebe4;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.notification-history-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 16px rgba(0,0,0,.05);
+}
+
+.history-icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: #edf4ed;
+  font-size: 18px;
+}
+
+.history-content strong {
+  display: block;
+  margin-bottom: 3px;
+}
+
+.history-content p {
+  margin: 0 0 3px;
+  font-size: 13px;
+  opacity: .72;
+}
+
+.history-content small {
+  font-size: 11px;
+  opacity: .55;
+}
+
+.history-channel {
+  font-size: 10px;
+  font-weight: 800;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: #eef4ee;
+  white-space: nowrap;
+}
+
+/* ---------- Offline / Network Banner ---------- */
+
+.network-banner {
+  margin: 0 0 22px;
+  padding: 14px 16px;
+  border: 1px solid #d9e2d9;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: #f7faf7;
+}
+
+.network-banner.online {
+  border-color: #cfe5d2;
+}
+
+.network-banner.poor {
+  border-color: #ead9a7;
+  background: #fffaf0;
+}
+
+.network-banner.offline {
+  border-color: #e7caca;
+  background: #fff7f7;
+}
+
+.network-status-main {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+
+.network-status-main span:last-child {
+  opacity: .72;
+  font-size: 13px;
+}
+
+.network-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  background: #58a866;
+  box-shadow: 0 0 0 4px rgba(88,168,102,.10);
+}
+
+.network-banner.poor .network-dot {
+  background: #d4a72c;
+  box-shadow: 0 0 0 4px rgba(212,167,44,.10);
+}
+
+.network-banner.offline .network-dot {
+  background: #c85c5c;
+  box-shadow: 0 0 0 4px rgba(200,92,92,.10);
+}
+
+.network-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.network-actions small {
+  opacity: .65;
+}
+
+.sync-button {
+  border: 0;
+  border-radius: 10px;
+  padding: 9px 13px;
+  cursor: pointer;
+  font-weight: 700;
+  background: #2f7d4a;
+  color: #fff;
+  transition: transform .15s ease, opacity .15s ease;
+}
+
+.sync-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.sync-button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+/* ---------- Pending Offline Bookings ---------- */
+
+.pending-bookings-section {
+  margin: 0 0 24px;
+  padding: 20px;
+  border: 1px solid #ead9a7;
+  border-radius: 16px;
+  background: #fffaf0;
+}
+
+.pending-bookings-section h2 {
+  margin: 4px 0 6px;
+}
+
+.pending-bookings-section p {
+  margin-top: 0;
+  opacity: .72;
+}
+
+.pending-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.pending-item {
+  display: grid;
+  grid-template-columns: minmax(100px,.8fr) minmax(180px,2fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 14px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.72);
+  border: 1px solid rgba(180,150,70,.2);
+}
+
+.pending-item span {
+  font-size: 13px;
+  opacity: .75;
+}
+
+.pending-badge {
+  justify-self: end;
+  padding: 5px 8px;
+  border-radius: 999px;
+  font-size: 10px !important;
+  font-weight: 800;
+  letter-spacing: .04em;
+  opacity: 1 !important;
+  background: #f1df9e;
+}
+
+/* ---------- Notification Channel Readiness ---------- */
+
+.notification-channel-card {
+  margin-top: 28px;
+  padding: 20px;
+  border: 1px solid #dce5dc;
+  border-radius: 16px;
+  background: #fafcf9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.notification-channel-card h3 {
+  margin: 4px 0 6px;
+}
+
+.notification-channel-card p:not(.eyebrow) {
+  margin: 0;
+  max-width: 680px;
+  opacity: .72;
+  line-height: 1.5;
+}
+
+.channel-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  min-width: 250px;
+}
+
+.channel-pills span {
+  padding: 8px 11px;
+  border-radius: 999px;
+  background: #eef4ee;
+  border: 1px solid #dce5dc;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ---------- STEP 14: SIH Demo Readiness ---------- */
+
+.sih-demo-card {
+  margin: 26px 0 0;
+  padding: 24px;
+  border-radius: 20px;
+  border: 1px solid #d7e5d8;
+  background: linear-gradient(135deg, #f7fbf7, #ffffff);
+  box-shadow: 0 10px 28px rgba(0,0,0,.045);
+}
+
+.sih-demo-card h2 {
+  margin: 4px 0 7px;
+}
+
+.sih-demo-card > div:first-child > p:not(.eyebrow) {
+  max-width: 760px;
+  margin: 0;
+  line-height: 1.55;
+  opacity: .72;
+}
+
+.sih-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.sih-metrics > div {
+  padding: 15px;
+  border: 1px solid #e1e9e1;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.sih-metrics strong {
+  display: block;
+  font-size: 22px;
+  line-height: 1.1;
+  margin-bottom: 5px;
+}
+
+.sih-metrics span {
+  display: block;
+  font-size: 12px;
+  opacity: .68;
+}
+
+/* ---------- Existing Toast / Notification Enhancement ---------- */
+
+.farmer-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  width: min(390px, calc(100vw - 40px));
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 15px;
+  border-radius: 15px;
+  background: #fff;
+  border: 1px solid #dce5dc;
+  box-shadow: 0 14px 35px rgba(0,0,0,.14);
+  animation: kisanflowNotificationIn .25s ease-out;
+}
+
+.notification-icon {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: #eef4ee;
+  font-size: 18px;
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-content strong {
+  display: block;
+  margin-bottom: 3px;
+}
+
+.notification-content p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+  opacity: .72;
+}
+
+.notification-close {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  opacity: .55;
+  padding: 2px 4px;
+}
+
+.notification-close:hover {
+  opacity: 1;
+}
+
+@keyframes kisanflowNotificationIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) translateX(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+}
+
+/* ---------- Accessibility / Touch ---------- */
+
+button,
+input,
+select {
+  min-height: 40px;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgba(47,125,74,.25);
+  outline-offset: 2px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  .sih-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .network-banner,
+  .notification-channel-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .network-actions {
+    width: 100%;
+  }
+
+  .pending-item {
+    grid-template-columns: 1fr;
+  }
+
+  .pending-badge {
+    justify-self: start;
+  }
+
+  .channel-pills {
+    justify-content: flex-start;
+    min-width: 0;
+  }
+
+  .notification-center-header {
+    flex-direction: column;
+  }
+
+  .reminder-toggle {
+    white-space: normal;
+  }
+
+  .notification-history-item {
+    grid-template-columns: auto 1fr;
+  }
+
+  .history-channel {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .sih-demo-card {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 520px) {
+  .sih-metrics {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .sih-metrics > div {
+    padding: 12px;
+  }
+
+  .sih-metrics strong {
+    font-size: 18px;
+  }
+
+  .farmer-notification {
+    top: 12px;
+    right: 12px;
+    width: calc(100vw - 24px);
+  }
+}
+
+/* =========================================================
+   KISANFLOW - STEP 14 CSS
+   Farmer Dashboard
+   ========================================================= */
+
+
+/* =========================================================
+   1. SIH DEMO READY CARD
+   ========================================================= */
+
+.sih-demo-card {
+  width: 100%;
+  margin: 24px 0;
+  padding: 24px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+  border: 1px solid #bbf7d0;
+  box-shadow: 0 8px 24px rgba(22, 101, 52, 0.08);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.sih-demo-card .eyebrow {
+  margin: 0 0 6px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  color: #15803d;
+}
+
+.sih-demo-card h2 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 800;
+  color: #14532d;
+}
+
+.sih-demo-card p {
+  margin: 0;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.sih-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
+  gap: 12px;
+  min-width: 380px;
+}
+
+.sih-metrics > div {
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #dcfce7;
+  border-radius: 12px;
+}
+
+.sih-metrics strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: 800;
+  color: #166534;
+}
+
+.sih-metrics span {
+  display: block;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #6b7280;
+}
+
+
+/* =========================================================
+   2. NOTIFICATION CENTRE
+   ========================================================= */
+
+.notification-center-card {
+  width: 100%;
+  margin: 24px 0;
+  padding: 22px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.notification-center-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.notification-center-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.notification-center-header p {
+  margin: 5px 0 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+
+/* =========================================================
+   3. REMINDER TOGGLE
+   ========================================================= */
+
+.reminder-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 13px;
+  border-radius: 10px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reminder-toggle:hover {
+  background: #f3f4f6;
+}
+
+.reminder-toggle input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  cursor: pointer;
+  accent-color: #16a34a;
+}
+
+.reminder-toggle span {
+  font-size: 13px;
+  font-weight: 700;
+  color: #374151;
+}
+
+
+/* =========================================================
+   4. NOTIFICATION HISTORY
+   ========================================================= */
+
+.notification-history {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.notification-history-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 13px;
+  border-radius: 12px;
+  background: #f9fafb;
+  border: 1px solid #f0f0f0;
+  transition: all 0.2s ease;
+}
+
+.notification-history-item:hover {
+  background: #f3f4f6;
+  transform: translateY(-1px);
+}
+
+.history-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+  background: #dcfce7;
+  font-size: 17px;
+}
+
+.history-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.history-content strong {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 14px;
+  color: #111827;
+}
+
+.history-content p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #6b7280;
+}
+
+.history-channel {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 6px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #ecfdf5;
+  color: #15803d;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.notification-empty {
+  padding: 24px;
+  text-align: center;
+  border-radius: 12px;
+  background: #f9fafb;
+  border: 1px dashed #d1d5db;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   5. NETWORK STATUS BANNER
+   ========================================================= */
+
+.network-banner {
+  width: 100%;
+  margin: 14px 0;
+  padding: 12px 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+
+  transition: all 0.25s ease;
+}
+
+.network-banner.online {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.network-banner.poor {
+  background: #fffbeb;
+  border-color: #fde68a;
+}
+
+.network-banner.offline {
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+
+.network-status-main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.network-status-main strong {
+  display: block;
+  font-size: 13px;
+  color: #111827;
+}
+
+.network-status-main span {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.network-dot {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #16a34a;
+}
+
+.network-banner.poor .network-dot {
+  background: #d97706;
+}
+
+.network-banner.offline .network-dot {
+  background: #dc2626;
+}
+
+.network-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+/* =========================================================
+   6. SYNC BUTTON
+   ========================================================= */
+
+.sync-button {
+  min-height: 38px;
+  padding: 8px 14px;
+
+  border: 1px solid #bbf7d0;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #166534;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sync-button:hover {
+  background: #f0fdf4;
+  border-color: #86efac;
+}
+
+.sync-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   7. PENDING OFFLINE BOOKINGS
+   ========================================================= */
+
+.pending-bookings-section {
+  width: 100%;
+  margin: 20px 0;
+  padding: 20px;
+
+  border-radius: 16px;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+}
+
+.pending-bookings-section h3 {
+  margin: 0 0 5px;
+  color: #92400e;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.pending-bookings-section > p {
+  margin: 0 0 16px;
+  color: #78350f;
+  font-size: 13px;
+}
+
+.pending-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pending-item {
+  padding: 13px 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  background: #ffffff;
+  border: 1px solid #fcd34d;
+  border-radius: 11px;
+}
+
+.pending-item strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #374151;
+  font-size: 13px;
+}
+
+.pending-item span {
+  display: block;
+  color: #6b7280;
+  font-size: 11px;
+}
+
+.pending-badge {
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 10px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   8. NOTIFICATION CHANNEL CARD
+   ========================================================= */
+
+.notification-channel-card {
+  width: 100%;
+  margin-top: 16px;
+  padding: 17px;
+
+  border-radius: 13px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+
+.notification-channel-card h4 {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 800;
+  color: #374151;
+}
+
+.channel-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.channel-pills span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 7px 10px;
+  border-radius: 999px;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+
+  color: #4b5563;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.channel-pills span.ready {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+  color: #166534;
+}
+
+
+/* =========================================================
+   9. FARMER NOTIFICATION TOAST
+   ========================================================= */
+
+.farmer-notification {
+  position: fixed;
+  top: 22px;
+  right: 22px;
+
+  z-index: 9999;
+
+  width: min(380px, calc(100vw - 32px));
+  padding: 14px 15px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 13px;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.14);
+
+  animation: kisanflowNotificationIn 0.3s ease-out;
+}
+
+.notification-icon {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+  background: #dcfce7;
+
+  font-size: 18px;
+}
+
+.notification-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.notification-content strong {
+  display: block;
+  margin-bottom: 3px;
+
+  color: #111827;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.notification-content p {
+  margin: 0;
+
+  color: #6b7280;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.notification-close {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  border-radius: 7px;
+
+  background: transparent;
+  color: #6b7280;
+
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.notification-close:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+
+/* =========================================================
+   10. VOICE CONTROLS
+   ========================================================= */
+
+.voice-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.language-selector {
+  min-height: 40px;
+  padding: 8px 12px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #374151;
+
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.voice-button,
+.voice-help-button {
+  min-height: 40px;
+  padding: 8px 14px;
+
+  border-radius: 9px;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.voice-button {
+  border: 1px solid #bbf7d0;
+  background: #f0fdf4;
+  color: #166534;
+}
+
+.voice-button:hover {
+  background: #dcfce7;
+}
+
+.voice-button.listening {
+  background: #fee2e2;
+  border-color: #fecaca;
+  color: #991b1b;
+}
+
+.voice-help-button {
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #4b5563;
+}
+
+.voice-help-button:hover {
+  background: #f9fafb;
+}
+
+
+/* =========================================================
+   11. APPOINTMENT TRACKER
+   ========================================================= */
+
+.appointment-tracker {
+  width: 100%;
+  margin-top: 20px;
+  padding: 20px;
+
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.tracker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 18px;
+}
+
+.tracker-header h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.tracker-header p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.appointment-status {
+  padding: 6px 10px;
+  border-radius: 999px;
+
+  background: #dcfce7;
+  color: #166534;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.appointment-details {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.appointment-details > div {
+  padding: 12px;
+  border-radius: 10px;
+  background: #f9fafb;
+}
+
+.appointment-details span {
+  display: block;
+  margin-bottom: 4px;
+
+  color: #6b7280;
+  font-size: 10px;
+}
+
+.appointment-details strong {
+  display: block;
+  color: #111827;
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   12. TRACKER STEPS
+   ========================================================= */
+
+.tracker {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  gap: 8px;
+}
+
+.tracker-step {
+  position: relative;
+  z-index: 1;
+
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.tracker-circle {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f3f4f6;
+  border: 2px solid #d1d5db;
+
+  color: #9ca3af;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.tracker-step.active .tracker-circle {
+  background: #dcfce7;
+  border-color: #22c55e;
+  color: #166534;
+}
+
+.tracker-step span {
+  margin-top: 7px;
+
+  color: #9ca3af;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.tracker-step.active span {
+  color: #166534;
+}
+
+
+/* =========================================================
+   13. GENERAL BUTTON / INPUT ACCESSIBILITY
+   ========================================================= */
+
+button,
+input,
+select {
+  min-height: 40px;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgba(34, 197, 94, 0.25);
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   14. LOADING STATE
+   ========================================================= */
+
+.dashboard-loading {
+  min-height: 300px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   15. EMPTY STATES
+   ========================================================= */
+
+.empty-state {
+  padding: 30px 20px;
+
+  text-align: center;
+
+  border: 1px dashed #d1d5db;
+  border-radius: 14px;
+
+  background: #f9fafb;
+}
+
+.empty-state h3 {
+  margin: 0 0 6px;
+  color: #374151;
+  font-size: 16px;
+}
+
+.empty-state p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   16. ANIMATIONS
+   ========================================================= */
+
+@keyframes kisanflowNotificationIn {
+  from {
+    opacity: 0;
+    transform: translateY(-12px) translateX(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+}
+
+
+/* =========================================================
+   17. MOBILE RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .sih-demo-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sih-metrics {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .appointment-details {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media (max-width: 650px) {
+  .sih-demo-card {
+    padding: 18px;
+    margin: 16px 0;
+  }
+
+  .sih-demo-card h2 {
+    font-size: 19px;
+  }
+
+  .sih-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .notification-center-card {
+    padding: 16px;
+  }
+
+  .notification-center-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .reminder-toggle {
+    width: 100%;
+  }
+
+  .network-banner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .network-actions {
+    width: 100%;
+  }
+
+  .sync-button {
+    width: 100%;
+  }
+
+  .pending-item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .appointment-details {
+    grid-template-columns: 1fr;
+  }
+
+  .tracker {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 8px;
+  }
+
+  .tracker-step {
+    min-width: 85px;
+  }
+
+  .tracker-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .farmer-notification {
+    top: 12px;
+    right: 12px;
+    left: 12px;
+    width: auto;
+  }
+
+  .voice-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .language-selector,
+  .voice-button,
+  .voice-help-button {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   18. SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+  .sih-demo-card {
+    padding: 15px;
+  }
+
+  .sih-demo-card h2 {
+    font-size: 17px;
+  }
+
+  .sih-demo-card p {
+    font-size: 12px;
+  }
+
+  .sih-metrics > div {
+    padding: 11px 12px;
+  }
+
+  .notification-history-item {
+    padding: 10px;
+  }
+
+  .history-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .appointment-tracker {
+    padding: 15px;
+  }
+
+  .tracker-circle {
+    width: 30px;
+    height: 30px;
+  }
+
+  .tracker-step span {
+    font-size: 9px;
+  }
+}
+
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.add-button {
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.edit-button,
+.delete-button {
+  border: none;
+  padding: 7px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.edit-button {
+  background: #f0ad4e;
+}
+
+.delete-button {
+  background: #dc3545;
+  color: white;
+}
+
+
+/* ================= MODAL ================= */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+}
+
+.modal {
+  width: 500px;
+  max-width: 92%;
+
+  background: white;
+  border-radius: 14px;
+  padding: 25px;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  margin: 0;
+}
+
+.close-button {
+  border: none;
+  background: transparent;
+
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: 600;
+}
+
+.form-group input {
+  padding: 11px;
+
+  border: 1px solid #ccc;
+  border-radius: 7px;
+
+  font-size: 15px;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #2e7d32;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.cancel-button,
+.save-button {
+  border: none;
+  padding: 10px 18px;
+
+  border-radius: 7px;
+  cursor: pointer;
+
+  font-weight: 600;
+}
+
+.cancel-button {
+  background: #ddd;
+}
+
+.save-button {
+  background: #2e7d32;
+  color: white;
+}
+
+
+/* =========================================================
+   ESTIMATED PAYOUT (Government MSP based)
+   ========================================================= */
+
+.payout-estimate {
+  margin-top: 16px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+  border: 1px solid #bbf7d0;
+}
+
+.payout-estimate-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.payout-estimate-main span {
+  font-weight: 700;
+  color: #166534;
+}
+
+.payout-estimate-main strong {
+  font-size: 22px;
+  color: #14532d;
+}
+
+.payout-estimate small {
+  display: block;
+  margin-top: 6px;
+  color: #4b7a5e;
+}
+
+.payout-estimate-no-msp {
+  background: #fffbeb;
+  border-color: #fde68a;
+}
+
+.payout-estimate-no-msp small {
+  color: #92400e;
+}
+
+.payout-estimate-loading {
+  background: #f9fafb;
+  border-color: #e5e7eb;
+}
+
+.payout-estimate-loading small {
+  color: #6b7280;
+}
+
+/* =========================================================
+   ADMIN ACCESS GATE (demo-only passcode screen)
+   ========================================================= */
+
+.admin-gate {
+  max-width: 420px;
+  margin: 80px auto;
+  padding: 36px 32px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.admin-gate .admin-gate-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.admin-gate h2 {
+  margin-bottom: 6px;
+}
+
+.admin-gate p {
+  color: #6b7280;
+  margin-bottom: 22px;
+}
+
+.admin-gate form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.admin-gate input {
+  padding: 13px 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.admin-gate button {
+  border: none;
+  background: #16a34a;
+  color: white;
+  font-weight: 700;
+  padding: 13px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.admin-gate button:hover {
+  transform: translateY(-2px);
+}
+
+.admin-gate .admin-gate-hint {
+  margin-top: 16px;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.admin-gate .admin-gate-error {
+  color: #b91c1c;
+  font-size: 13px;
+  margin: -4px 0 0;
+}
+
+.auth-toggle {
+  border: none;
+  background: none;
+  color: #16a34a;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  font-size: inherit;
+}
+
+.farmer-header-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.farmer-session-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.logout-button {
+  border: none;
+  background: #f3f4f6;
+  color: #374151;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background: #e5e7eb;
+}
